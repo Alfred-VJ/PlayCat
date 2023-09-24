@@ -1,3 +1,4 @@
+let firstMoveSperCentro = null;
 let firstBoxCentralTercer = null;
 let firstboxCorn = null;
 let firstBoxCentral = null;
@@ -272,6 +273,9 @@ function invincibleMachin() {
     if (firstBoxCentralTercer && !firstMove) {
         if (evalMoveTercerCentral()) return true;
     }
+    if (firstMoveSperCentro && !firstMove) {
+        if (evalMovetSuperCentro()) return true
+    }
     let combinaciones = {
         uno: ["a1", "a2", "a3"],
         dos: ["b1", "b2", "b3"],
@@ -285,8 +289,32 @@ function invincibleMachin() {
 
     for (combinacion in combinaciones) {
         let arr = [];
-
-        for (let i = 0; i < combinaciones[combinacion].length; i++) {
+        console.log({ combinaciones, combinacion, arr })
+        for (var i = 0; i < combinaciones[combinacion].length; i++) {
+            let marca = document.getElementById(combinaciones[combinacion][i]).textContent;
+            arr.push(marca);
+        }
+        if (arr[0] == "O" && arr[1] == "O") {
+            if (document.getElementById(combinaciones[combinacion][2]).textContent == "") {
+                document.getElementById(combinaciones[combinacion][2]).textContent = "O";
+                return true;
+            }
+        } else if (arr[0] == "O" && arr[2] == "O") {
+            if (document.getElementById(combinaciones[combinacion][1]).textContent == "") {
+                document.getElementById(combinaciones[combinacion][1]).textContent = "O";
+                return true;
+            }
+        } else if (arr[1] == "O" && arr[2] == "O") {
+            if (document.getElementById(combinaciones[combinacion][0]).textContent == "") {
+                document.getElementById(combinaciones[combinacion][0]).textContent = "O";
+                return true;
+            }
+        }
+    }
+    for (combinacion in combinaciones) {
+        let arr = [];
+        console.log({ combinaciones, combinacion, arr })
+        for (var i = 0; i < combinaciones[combinacion].length; i++) {
             let marca = document.getElementById(combinaciones[combinacion][i]).textContent;
             arr.push(marca);
         }
@@ -333,6 +361,7 @@ function evalPositionInicial() {
             } else if (position === "positionTres") {
                 if (document.getElementById(strategicPosition[position][i]).textContent === "X") {
                     document.getElementById("b2").textContent = "O";
+                    firstMoveSperCentro = strategicPosition[position][i];
                     return true;
                 }
             }
@@ -406,5 +435,180 @@ function evalMoveTercerCentral() {
         }
     }
     firstBoxCentralTercer = null;
+    return false;
+}
+function evalMovetSuperCentro() {
+    console.log({ firstMoveSperCentro });
+    switch (firstMoveSperCentro) {
+        case "a2":
+            if (document.getElementById("b3").textContent === "X") {
+                if (document.getElementById("c3").textContent === "") {
+                    document.getElementById("c3").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("b1").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("c1").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+
+            }
+            if (document.getElementById("c3").textContent === "X") {
+                if (document.getElementById("a3").textContent === "") {
+                    document.getElementById("a3").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            break;
+        case "b1":
+            if (document.getElementById("a2").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("a3").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("c2").textContent === "X") {
+                if (document.getElementById("c1").textContent === "") {
+                    document.getElementById("c1").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("c3").textContent === "X") {
+                if (document.getElementById("c1").textContent === "") {
+                    document.getElementById("c1").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            break;
+        case "b3":
+            if (document.getElementById("a1").textContent === "X") {
+                if (document.getElementById("a3").textContent === "") {
+                    document.getElementById("a3").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("a2").textContent === "X") {
+                if (document.getElementById("a3").textContent === "") {
+                    document.getElementById("a3").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                }
+            }
+            if (document.getElementById("c1").textContent === "X") {
+                if (document.getElementById("c3").textContent === "") {
+                    document.getElementById("c3").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            if (document.getElementById("c2").textContent === "X") {
+                if (document.getElementById("c3").textContent === "") {
+                    document.getElementById("c3").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            break;
+            case "c2":
+                if (document.getElementById("a1").textContent === "X") {
+                    if (document.getElementById("c1").textContent === "") {
+                        document.getElementById("c1").textContent = "O";
+                        firstMoveSperCentro = null;
+                        return true;
+                    } else {
+                        firstMoveSperCentro = null;
+                        return false;
+                    }
+                }
+                if (document.getElementById("a3").textContent === "X") {
+                    if (document.getElementById("c3").textContent === "") {
+                        document.getElementById("c3").textContent = "O";
+                        firstMoveSperCentro = null;
+                        return true;
+                    } else {
+                        firstMoveSperCentro = null;
+                        return false;
+                    }
+                }
+                if (document.getElementById("b1").textContent === "X") {
+                    if (document.getElementById("c1").textContent === "") {
+                        document.getElementById("c1").textContent = "O"
+                        firstMoveSperCentro = null;
+                        return true;
+                    } else {
+                        firstMoveSperCentro = null;
+                        return false;
+                    };
+                }
+                if (document.getElementById("b3").textContent === "X") {
+                    if (document.getElementById("c3").textContent === "") {
+                        document.getElementById("c3").textContent = "O"
+                        firstMoveSperCentro = null;
+                        return true;
+                    } else {
+                        firstMoveSperCentro = null;
+                        return false;
+                    };
+                }
+                break;
+    }
     return false;
 }
