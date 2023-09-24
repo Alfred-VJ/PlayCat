@@ -374,8 +374,18 @@ function evalMoveSecondCorn() {
     if (firstboxCorn) {
         switch (firstboxCorn) {
             case "a1":
-                if (document.getElementById("c3").textContent === "X") {
+                if (document.getElementById("c3").textContent === "X") {                    
                     document.getElementById("b3").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
+                if (document.getElementById("b3").textContent === "X") {                    
+                    document.getElementById("a3").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
+                if (document.getElementById("c2").textContent === "X") {                    
+                    document.getElementById("c1").textContent = "O";
                     firstboxCorn = null;
                     return true;
                 }
@@ -386,6 +396,16 @@ function evalMoveSecondCorn() {
                     firstboxCorn = null;
                     return true;
                 }
+                if (document.getElementById("b1").textContent === "X") {                    
+                    document.getElementById("a1").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
+                if (document.getElementById("c2").textContent === "X") {                    
+                    document.getElementById("c3").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
                 break;
             case "c1":
                 if (document.getElementById("a3").textContent === "X") {
@@ -393,10 +413,30 @@ function evalMoveSecondCorn() {
                     firstboxCorn = null;
                     return true;
                 }
+                if (document.getElementById("a2").textContent === "X") {                    
+                    document.getElementById("a1").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
+                if (document.getElementById("b3").textContent === "X") {                    
+                    document.getElementById("c3").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
                 break;
             case "c3":
                 if (document.getElementById("a1").textContent === "X") {
                     document.getElementById("b3").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
+                if (document.getElementById("a2").textContent === "X") {                    
+                    document.getElementById("a3").textContent = "O";
+                    firstboxCorn = null;
+                    return true;
+                }
+                if (document.getElementById("b1").textContent === "X") {                    
+                    document.getElementById("a1").textContent = "O";
                     firstboxCorn = null;
                     return true;
                 }
