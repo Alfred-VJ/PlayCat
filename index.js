@@ -482,6 +482,16 @@ function evalMovetSuperCentro() {
                     return false;
                 };
             }
+            if (document.getElementById("c2").textContent === "X") {
+                if (document.getElementById("a3").textContent === "") {
+                    document.getElementById("a3").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
             break;
         case "b1":
             if (document.getElementById("a2").textContent === "X") {
@@ -524,6 +534,17 @@ function evalMovetSuperCentro() {
                     return false;
                 };
             }
+            if (document.getElementById("b3").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            break;
             break;
         case "b3":
             if (document.getElementById("a1").textContent === "X") {
@@ -566,49 +587,69 @@ function evalMovetSuperCentro() {
                     return false;
                 };
             }
+            if (document.getElementById("c1").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
             break;
-            case "c2":
-                if (document.getElementById("a1").textContent === "X") {
-                    if (document.getElementById("c1").textContent === "") {
-                        document.getElementById("c1").textContent = "O";
-                        firstMoveSperCentro = null;
-                        return true;
-                    } else {
-                        firstMoveSperCentro = null;
-                        return false;
-                    }
+        case "c2":
+            if (document.getElementById("a1").textContent === "X") {
+                if (document.getElementById("c1").textContent === "") {
+                    document.getElementById("c1").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
                 }
-                if (document.getElementById("a3").textContent === "X") {
-                    if (document.getElementById("c3").textContent === "") {
-                        document.getElementById("c3").textContent = "O";
-                        firstMoveSperCentro = null;
-                        return true;
-                    } else {
-                        firstMoveSperCentro = null;
-                        return false;
-                    }
+            }
+            if (document.getElementById("a3").textContent === "X") {
+                if (document.getElementById("c3").textContent === "") {
+                    document.getElementById("c3").textContent = "O";
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
                 }
-                if (document.getElementById("b1").textContent === "X") {
-                    if (document.getElementById("c1").textContent === "") {
-                        document.getElementById("c1").textContent = "O"
-                        firstMoveSperCentro = null;
-                        return true;
-                    } else {
-                        firstMoveSperCentro = null;
-                        return false;
-                    };
-                }
-                if (document.getElementById("b3").textContent === "X") {
-                    if (document.getElementById("c3").textContent === "") {
-                        document.getElementById("c3").textContent = "O"
-                        firstMoveSperCentro = null;
-                        return true;
-                    } else {
-                        firstMoveSperCentro = null;
-                        return false;
-                    };
-                }
-                break;
+            }
+            if (document.getElementById("b1").textContent === "X") {
+                if (document.getElementById("c1").textContent === "") {
+                    document.getElementById("c1").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            if (document.getElementById("b3").textContent === "X") {
+                if (document.getElementById("c3").textContent === "") {
+                    document.getElementById("c3").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            if (document.getElementById("a2").textContent === "X") {
+                if (document.getElementById("a1").textContent === "") {
+                    document.getElementById("a1").textContent = "O"
+                    firstMoveSperCentro = null;
+                    return true;
+                } else {
+                    firstMoveSperCentro = null;
+                    return false;
+                };
+            }
+            break;
     }
     return false;
 }
