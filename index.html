@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gato Miau</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">JUEGO DEL GATO</h1>
+    <div class="controles">
+      <button onclick="reset()">Reiniciar</button>
+      <button onclick="deleteJugada()">Desacer jugada</button>
+      <button id="maq" onclick="maquinaActiv()">Jugar contra la máquina</button>
+      <button id="ami" onclick="friend()">Jugar contra un amigo</button>
+    </div>
+    <div class="pantalla">
+      <div id="tablero" class="tablero">
+        <div class="fila-uno">
+          <div id="A1" onclick="turno('a1')" class="casillas">
+            <div id="a1" class="tiro"></div>
+          </div>
+          <div id="A2" onclick="turno('a2')" class="casillas">
+            <div id="a2" class="tiro"></div>
+          </div>
+          <div id="A3" onclick="turno('a3')" class="casillas">
+            <div id="a3" class="tiro"></div>
+          </div>
+        </div>
+        <div class="fila-dos">
+          <div id="B1" onclick="turno('b1')" class="casillas">
+            <div id="b1" class="tiro"></div>
+          </div>
+          <div id="B2" onclick="turno('b2')" class="casillas">
+            <div id="b2" class="tiro"></div>
+          </div>
+          <div id="B3" onclick="turno('b3')" class="casillas">
+            <div id="b3" class="tiro"></div>
+          </div>
+        </div>
+        <div class="fila-tres">
+          <div id="C1" onclick="turno('c1')" class="casillas">
+            <div id="c1" class="tiro"></div>
+          </div>
+          <div id="C2" onclick="turno('c2')" class="casillas">
+            <div id="c2" class="tiro"></div>
+          </div>
+          <div id="C3" onclick="turno('c3')" class="casillas">
+            <div id="c3" class="tiro"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div id="content-niveles" class="content-niveles">
+          <label for="misNiveles" class="lbl-niveles">NIVELES</label>
+          <select id="misNiveles" name="niveles" class="select-niveles">
+            <option value="uno">Fácil</option>
+            <option value="dos">Medio</option> 
+            <option value="tres">Dificil</option>    
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="ganadorMessage" class="ganadorMessage">
+      <h1>Felicidades ganaste jugador</h1>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
