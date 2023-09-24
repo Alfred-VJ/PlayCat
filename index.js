@@ -586,8 +586,8 @@ function evalMovetSuperCentro() {
                     firstMoveSperCentro = null;
                     return false;
                 };
-            }
-            if (document.getElementById("c1").textContent === "X") {
+            }       
+            if (document.getElementById("b1").textContent === "X") {
                 if (document.getElementById("a1").textContent === "") {
                     document.getElementById("a1").textContent = "O"
                     firstMoveSperCentro = null;
