@@ -268,7 +268,6 @@ function invincibleMachin() {
 
     for (combinacion in combinaciones) {
         let arr = [];
-        console.log({ combinaciones, combinacion, arr })
         for (var i = 0; i < combinaciones[combinacion].length; i++) {
             let marca = document.getElementById(combinaciones[combinacion][i]).textContent;
             arr.push(marca);
@@ -292,7 +291,6 @@ function invincibleMachin() {
     }
     for (combinacion in combinaciones) {
         let arr = [];
-        console.log({ combinaciones, combinacion, arr })
         for (var i = 0; i < combinaciones[combinacion].length; i++) {
             let marca = document.getElementById(combinaciones[combinacion][i]).textContent;
             arr.push(marca);
@@ -457,7 +455,6 @@ function evalMoveTercerCentral() {
     return false;
 }
 function evalMovetSuperCentro() {
-    console.log({ firstMoveSperCentro });
     switch (firstMoveSperCentro) {
         case "a2":
             if (document.getElementById("b3").textContent === "X") {
