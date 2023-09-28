@@ -1,3 +1,4 @@
+let menuActiv = false;
 let firstMoveSperCentro = null;
 let firstBoxCentralTercer = null;
 let firstboxCorn = null;
@@ -26,6 +27,7 @@ document.getElementById("ami").style.color = "blue";
 let niveles = document.getElementById("misNiveles");
 let nivel = null;
 niveles.addEventListener("change", function () {
+    reset();
     nivel = niveles.value;
 });
 function turno(casilla) {
@@ -51,7 +53,7 @@ function turno(casilla) {
     }
     return false;
 }
-function reset() {
+function reset() {    
     firstMove = true;
     firstBoxCentral = null;
     firstboxCorn = null;
@@ -81,36 +83,12 @@ function reset() {
     J1 = true;
     J2 = false;
     wind = false;
-    document.getElementById("ganadorMessage").textContent = "Felicidades ganaste jugador";
+    document.getElementById("ganadorMessage").textContent = "";
     document.getElementById("ganadorMessage").style.display = "none";
-
+    showMenu(1);
     return false;
 }
-function deleteJugada() {
-    if (!wind) {
-        if (tiros.player1.length || tiros.player2.length) {
-            if (!Only) {
-                if (!J1) {
-                    let casillaDelete = tiros.player1.pop();
-                    document.getElementById(casillaDelete.casilla).textContent = "";
-                    J1 = true;
-                    J2 = false;
-                    return false;
-                } else {
-                    let casillaDelete = tiros.player2.pop();
-                    document.getElementById(casillaDelete.casilla).textContent = "";
-                    J2 = true;
-                    J1 = false;
-                    return false;
-                }
-            } else {
-                alert("No se puede desaser la jugada si estas jugando contra la máquina")
-            }
-        } else {
-            return false;
-        }
-    }
-}
+
 function casillaOcupada(casilla) {
     let O = document.getElementById(casilla).textContent;
     return O ? false : true;
@@ -143,6 +121,7 @@ function azarNumber() {
     return Math.floor(Math.random() * 9);
 }
 function friend() {
+    reset();
     Only = false;
     document.getElementById("ami").style.color = "blue";
     document.getElementById("maq").style.color = "white";
@@ -174,8 +153,8 @@ function gameOver() {
         }
         if (Win(arr, combinaciones[combinacion])) {
             wind = true;
-            let messa = document.getElementById("ganadorMessage").textContent;
-            document.getElementById("ganadorMessage").textContent = `${messa} "${arr[0]}"`;
+            let messa = Only ? arr[0] == "X" ? "Felicidades haz Ganado" : "Lamentablemente perdiste pero puedes volver a intentarlo" : "Este duelo sacó chispas";
+            document.getElementById("ganadorMessage").textContent = messa;
 
             document.getElementById("ganadorMessage").style.display = "flex";
             return false;
@@ -691,5 +670,17 @@ function evalMovetSuperCentro() {
             }
             break;
     }
+    return false;
+}
+
+function showMenu(rest){
+    var menu = document.getElementById("windows-btn");
+    if(rest){
+        menuActiv = false;
+        menu.style.display = "none";
+        return false;
+    }
+    menuActiv ? menuActiv = false : menuActiv = true;
+    menuActiv ? menu.style.display = "grid" : menu.style.display = "none";
     return false;
 }

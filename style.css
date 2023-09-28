@@ -33,14 +33,14 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;    
+    justify-content: space-around;
 }
 
 .tablero {
     width: 30%;
     height: 50%;
-    position: absolute;  
-    left: 35%;  
+    position: absolute;
+    left: 35%;
 }
 
 .fila-uno {
@@ -107,6 +107,10 @@ body {
     font-size: 20px;
 }
 
+.controles-responsiv {
+    display: none;
+}
+
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
     .controles {
@@ -117,8 +121,42 @@ body {
     }
 
     .controles button {
-        display: flex;
-        font-size: 10px;
+        display: none;
+    }
+
+    .controles-responsiv {
+        display: block;
+        position: absolute;
+        color: #ffe6e6;
+        text-align: end;
+        top: 15%;
+        right: 5%;
+        z-index: 9;
+    }
+
+    .fas {
+        font-size: 200%;
+    }
+
+    .windows-btn {        
+        border: solid .1px rgb(128, 128, 128);
+        margin-top: 1px;
+        padding: 10% 50%;
+        margin-left: -88%;
+        border-radius: 20px;
+        background-color: black;
+        box-shadow: 0 0 20px rgb(0, 247, 255);
+        width: 88%;
+        display: none;
+    }
+
+    .btn-responsiv {
+        background: black;
+        color: #ffffff;
+        padding: 10%;        
+        margin: 20% 0;        
+        box-shadow: 0 0 5px rgba(0, 247, 255, 0.685);
+        font-weight: 900;        
     }
 
     .pantalla {
@@ -128,35 +166,35 @@ body {
         align-items: center;
         justify-content: space-around;
     }
-    
+
     .tablero {
         width: 100%;
         height: 50%;
         left: 0;
     }
 
-    .select-niveles {        
+    .select-niveles {
         background-color: transparent;
         border: none;
         color: #000000;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .content-niveles {
         width: 100%;
         color: #000000;
         padding: 10%;
-        background-color: #ffffff;
-        font-size: 20px;
-        margin: -310% -150%;        
+        background-color: #00e1ffc5;
+        font-size: 15px;
+        margin: -320% -150%;
         display: none;
         border-radius: 20px;
     }
-    
+
     .lbl-niveles {
         padding: 0;
     }
-    
+
     .ganadorMessage {
         position: absolute;
         color: #ffe6e6;
@@ -169,5 +207,5 @@ body {
         text-align: center;
         padding: 10% 0;
     }
-    
+
 }

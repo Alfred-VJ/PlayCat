@@ -5,14 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
   <body>
     <h1 class="title">JUEGO DEL GATO</h1>
     <div class="controles">
       <button onclick="reset()">Reiniciar</button>
-      <button onclick="deleteJugada()">Deshacer jugada</button>
       <button id="maq" onclick="maquinaActiv()">Jugar contra la máquina</button>
       <button id="ami" onclick="friend()">Dos jugadores</button>
+    </div>
+    <div class="controles-responsiv">
+      <i class="fas fa-bars" onclick="showMenu()"></i>
+      <div id="windows-btn" class = "windows-btn">
+        <button class="btn-responsiv" onclick="reset()">Reiniciar</button>
+        <button class="btn-responsiv" id="maq" onclick="maquinaActiv()">
+          Jugar contra la máquina
+        </button>
+        <button class="btn-responsiv" id="ami" onclick="friend()">Dos jugadores</button>
+      </div>
     </div>
     <div class="pantalla">
       <div id="tablero" class="tablero">
@@ -55,14 +65,14 @@
           <label for="misNiveles" class="lbl-niveles">NIVELES</label>
           <select id="misNiveles" name="niveles" class="select-niveles">
             <option value="uno">Fácil</option>
-            <option value="dos">Medio</option> 
-            <option value="tres">Invencible</option>    
+            <option value="dos">Medio</option>
+            <option value="tres">Invencible</option>
           </select>
         </div>
       </div>
     </div>
     <div id="ganadorMessage" class="ganadorMessage">
-      <h1>Felicidades ganaste jugador</h1>
+      <h1></h1>
     </div>
     <script src="index.js"></script>
   </body>
