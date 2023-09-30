@@ -20,9 +20,13 @@ body {
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-.title {
+.bar-nav{
     position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #2ba0af;
+}
+.title {    
     color: #ffffff;
     text-align: center;
     top: 20px;
@@ -72,7 +76,7 @@ body {
 }
 
 .tiro {
-    color: rgb(9, 180, 152);
+    color: #09b498;
     font-size: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -145,7 +149,7 @@ body {
         margin-left: -88%;
         border-radius: 20px;
         background-color: black;
-        box-shadow: 0 0 20px rgb(0, 247, 255);
+        box-shadow: 0 0 20px #00f7ff;
         width: 88%;
         display: none;
     }
@@ -155,7 +159,7 @@ body {
         color: #ffffff;
         padding: 10%;        
         margin: 20% 0;        
-        box-shadow: 0 0 5px rgba(0, 247, 255, 0.685);
+        box-shadow: 0 0 5px #00f7ffaf;
         font-weight: 900;        
     }
 

@@ -38,10 +38,11 @@ function turno(casilla) {
                 tiros.player1.push({ casilla })
                 tiroPrint.textContent = "X";
                 J2 = true;
+                J1 = false;
                 !Only ? J1 = false : setTimeout(() => machineTurn(), 500);
                 setTimeout(() => gameOver(), 250);
                 return false;
-            } else {
+            } else if(!Only) {
                 tiros.player2.push({ casilla })
                 tiroPrint.textContent = "O";
                 J1 = true;
@@ -94,6 +95,7 @@ function casillaOcupada(casilla) {
     return O ? false : true;
 }
 function machineTurn() {
+    J1 = true;
     if (nivel == "dos") {
         if (superMachinTurn()) {
             setTimeout(() => gameOver(), 250);
